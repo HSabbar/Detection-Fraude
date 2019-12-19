@@ -82,7 +82,12 @@ _________________________________________________________________
 
 # Inspiration
 
->https://keras.io/ 
-https://blog.keras.io/building-autoencoders-in-keras.html
-https://keras.io/layers/core/
+> https://keras.io/ 
+> https://blog.keras.io/building-autoencoders-in-keras.html
+> https://keras.io/layers/core/
+> https://github.com/curiousily/Credit-Card-Fraud-Detection-using-Autoencoders-in-Keras
+> https://towardsdatascience.com/credit-card-fraud-detection-a1c7e1b75f59
+> https://github.com/kamathhrishi/Detecting-Fraudulent-Credit-Card-Transactions/blob/master/notebook.ipynb
+> https://blogs.oracle.com/datascience/fraud-detection-using-autoencoders-in-keras-with-a-tensorflow-backend
+> https://mc.ai/credit-card-fraud-detection-by-neural-network-in-keras/
 
