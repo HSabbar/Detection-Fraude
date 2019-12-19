@@ -80,5 +80,9 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-https://keras.io/ 
+# Inspiration
+
+>https://keras.io/ 
 https://blog.keras.io/building-autoencoders-in-keras.html
+https://keras.io/layers/core/
+
