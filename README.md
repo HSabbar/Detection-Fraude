@@ -1,4 +1,4 @@
-# Detection-Fraude
+# Detection de Fraude avec Keras
 
 
 La fraude par carte de crédit a entraîné une perte de 3 milliards de dollars pour les institutions financières nord-américaines en 2017. La montée en puissance des systèmes de paiement numériques tels qu'Apple Pay, Android Pay et Venmo a entraîné une augmentation des pertes dues à des activités frauduleuses. Le Deep Learning présente une solution prometteuse au problème de la détection de la fraude par carte de crédit en permettant aux institutions d'utiliser de manière optimale leurs données clients historiques ainsi que les détails de transaction en temps réel qui sont enregistrés au moment de la transaction. En 2017, une étude a révélé qu'une approche d'apprentissage en profondeur a fourni des résultats comparables aux méthodes de détection de fraude existantes telles que les arbres à gradient amélioré et la régression logistique. Cependant, le Deep Learning englobe un certain nombre de topologies. 
@@ -52,6 +52,13 @@ _________________________________________________________________
 
 ## Réseaux de Neurones :
 
+Les modèles dans Keras sont définis comme une séquence de couches.
+Nous définissons d'abord que la couche d'entrée au bon nombre d'entrées, ce qui se fait en définissant, dans input_dim notre cas, elle est de 30 colonnes.
+Nous pouvons spécifier le nombre de neurones dans la couche comme premier argument, la méthode d'initialisation comme deuxième argument comme int et spécifier la fonction d'activation en utilisant l'argument d'activation.
+Nous utiliserons la fonction d'activation du redresseur ('relu').
+Nous avons utilisé la fonction `Dropout(rate)` ce qui permet d'éviter le surapprentissage.
+
+```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -71,7 +78,7 @@ Total params: 1,933
 Trainable params: 1,933
 Non-trainable params: 0
 _________________________________________________________________
-
+```
 
 https://keras.io/ 
 https://blog.keras.io/building-autoencoders-in-keras.html
