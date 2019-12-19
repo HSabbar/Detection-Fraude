@@ -29,6 +29,22 @@ L'encodeur automatique peut être divisé en parties ci-dessous
 ### Model Autoencoders
 
 ```
+# input layer
+input_layer = tf.keras.layers.Input(shape=(X.shape[1],))
+
+# encoding 
+encoded = tf.keras.layers.Dense(100, activation='tanh', activity_regularizer=tf.keras.regularizers.l1(10e-5))(input_layer)
+encoded = tf.keras.layers.Dense(50, activation='relu')(encoded)
+
+# decoding 
+decoded = tf.keras.layers.Dense(50, activation='tanh')(encoded)
+decoded = tf.keras.layers.Dense(100, activation='tanh')(decoded)
+
+# output layer
+output_layer = tf.keras.layers.Dense(X.shape[1], activation='relu')(decoded)
+```
+
+```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
