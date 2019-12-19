@@ -4,7 +4,7 @@
 La fraude par carte de crédit a entraîné une perte de 3 milliards de dollars pour les institutions financières nord-américaines en 2017. La montée en puissance des systèmes de paiement numériques tels qu'Apple Pay, Android Pay et Venmo a entraîné une augmentation des pertes dues à des activités frauduleuses. Le Deep Learning présente une solution prometteuse au problème de la détection de la fraude par carte de crédit en permettant aux institutions d'utiliser de manière optimale leurs données clients historiques ainsi que les détails de transaction en temps réel qui sont enregistrés au moment de la transaction. En 2017, une étude a révélé qu'une approche d'apprentissage en profondeur a fourni des résultats comparables aux méthodes de détection de fraude existantes telles que les arbres à gradient amélioré et la régression logistique. Cependant, le Deep Learning englobe un certain nombre de topologies. 
 De plus, les différents paramètres utilisés pour construire le modèle (par ex. le nombre de neurones dans la couche cachée d'un réseau neuronal) influencent également ses résultats. 
 
-nous évaluons deux model d'apprentissage profond du réseau neuronal artificiel un normal et un encodeur automatique; Nous utilisons un environnement de Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HSabbar/Detection-Fraude/blob/master/Detection_de_Fraude.ipynb) pour la haute performances de calcul en GPU, le problème de détection de fraude courant les donnés sont déséquilibré des classes. 
+nous évaluons deux model d'apprentissage profond du réseau neuronal artificiel un Sequential et un encodeur automatique; Nous utilisons un environnement de Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HSabbar/Detection-Fraude/blob/master/Detection_de_Fraude.ipynb) pour la haute performances de calcul en GPU, le problème de détection de fraude courant les donnés sont déséquilibré des classes. 
 
 ## DataSet : [_Kaggle_](https://www.kaggle.com/mlg-ulb/creditcardfraud)
  
@@ -66,7 +66,7 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
-## Réseaux de Neurones :
+## Le model Sequential :
 
 Les modèles dans Keras sont définis comme une séquence de couches.
 Nous définissons d'abord que la couche d'entrée au bon nombre d'entrées, ce qui se fait en définissant, dans input_dim notre cas, elle est de 30 colonnes.
