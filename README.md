@@ -6,14 +6,14 @@ De plus, les différents paramètres utilisés pour construire le modèle (par e
 
 nous évaluons deux model d'apprentissage profond du réseau neuronal artificiel un normal et un encodeur automatique; Nous utilisons un environnement de Google Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HSabbar/Detection-Fraude/blob/master/Detection_de_Fraude.ipynb) pour la haute performances de calcul en GPU, le problème de détection de fraude courant les donnés sont déséquilibré des classes. 
 
-## [DataSet](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+## DataSet : [_Kaggle_](https://www.kaggle.com/mlg-ulb/creditcardfraud)
  
 L’ensemble des données obtenu sur Kaggle, contiennent des transactions effectuées par carte de crédit en septembre 2013 par des titulaires de carte européens. Cet ensemble de données présente les transactions qui ont eu lieu en deux jours, où nous avons 492 fraudes sur 284 807 transactions. L'ensemble de données est très déséquilibré, la classe positive (fraudes) représente 0,172% de toutes les transactions.
 Il ne contient que des variables d'entrée numériques qui sont le résultat d'une transformation PCA. Malheureusement, en raison de problèmes de confidentialité, nous ne pouvons pas fournir les fonctionnalités d'origine et plus d'informations sur les données. Les fonctionnalités V1, V2,… V28 sont les principaux composants obtenus avec PCA, les seules fonctionnalités qui n'ont pas été transformées avec PCA sont 'Time' et 'Amount'. 
 
 ### Normaliser les données
 
-En utilisant StandardScaler, nous normalisons l'ensemble de données afin de n'avoir aucun biais. En appliquant StandardScaler, nous transformerons simplement les données de sorte que leur distribution aura une valeur moyenne 0 et un écart type de 1.
+En utilisant StandardScaler, nous normalisons l'ensemble de données afin de n'avoir aucun biais. En appliquant StandardScaler et RobustScaler, nous transformerons simplement les données de sorte que leur distribution aura une valeur moyenne entre 0 et un écart type de 1.
 
 ### Diviser les données en train et tester
 
@@ -26,6 +26,7 @@ L'encodeur automatique peut être divisé en parties ci-dessous
 * Encodeur : cette partie du réseau comprime ou sous-échantillonne l'entrée en moins de bits. L'espace représenté par ce nombre réduit de bits est souvent appelé espace latent ou goulot d'étranglement . Le goulot d'étranglement est également appelé «point de compression maximal» car à ce stade, l'entrée est compressée au maximum. Ces bits compressés qui représentent l'entrée d'origine sont appelés ensemble un «codage» de l'entrée.
 * Décodeur : cette partie du réseau essaie de reconstruire l'entrée en utilisant uniquement le codage de l'entrée. Lorsque le décodeur est capable de reconstruire l'entrée exactement comme elle a été envoyée à l'encodeur, vous pouvez dire que l'encodeur est capable de produire les meilleurs encodages pour l'entrée avec laquelle le décodeur est capable de bien reconstruire 
 
+### Model Autoencoders
 
 ```
 _________________________________________________________________
@@ -49,5 +50,28 @@ Non-trainable params: 0
 _________________________________________________________________
 ```
 
+## Réseaux de Neurones :
 
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_11 (Dense)             (None, 16)                496       
+_________________________________________________________________
+dense_12 (Dense)             (None, 24)                408       
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 24)                0         
+_________________________________________________________________
+dense_13 (Dense)             (None, 20)                500       
+_________________________________________________________________
+dense_14 (Dense)             (None, 24)                504       
+_________________________________________________________________
+dense_15 (Dense)             (None, 1)                 25        
+=================================================================
+Total params: 1,933
+Trainable params: 1,933
+Non-trainable params: 0
+_________________________________________________________________
+
+
+https://keras.io/ 
 https://blog.keras.io/building-autoencoders-in-keras.html
